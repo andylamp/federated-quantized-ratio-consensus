@@ -1,2 +1,3 @@
-# federated-quantized-ration-consensus
-Federated Quantized Capacity Ration Consensus Revisited!
+# Federated Quantized Capacity Ratio Consesus
+
+TBD!
