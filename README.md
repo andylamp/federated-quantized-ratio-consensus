@@ -1,3 +1,3 @@
-# Federated Quantized Capacity Ratio Consesus
+# Federated Quantized Capacity Ratio Consensus
 
 TBD!
