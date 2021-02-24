@@ -29,7 +29,7 @@ while (find(AAA==0)>0)
     diam=diam+1;
 end
 
-
+% Sum(y) > Sum(z)
 quant_step=100;   % we can multiply by max of z0
 y0=quant_step*randi(50,nodes,1);
 z0=2*ones(nodes,1);
