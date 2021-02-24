@@ -50,15 +50,42 @@ for t=trials_arr
     
     for n=node_to_test_len
       nodes = nodes_to_test(n);
-      
+      fprintf(" -- Running for node size: %d", nodes);
       % generate the capacity for z0
       z0 = gen_workload(nodes);
       % now generate the capacity for y0
       y0_opt.multiplier = quantization_step;
       y0_opt.distribution_type = "randomised";
       y0 = gen_workload(nodes, y0_opt);
+      
+      % sanity check to ensure that the invariant holds
+      assert(sum(y0) > sum(z0));
+      
       % firstly, lets generate the graph
       [~, diameter, nodes, adjMatrix] = gen_graph(nodes);
+      
+      % transmit the nodes
+      transm_z = zeros(nodes);
+      transm_y = zeros(nodes);
+      
+      % set the initialisation values
+      z = z0;
+      y = y0;
+      init_avg = sum(y0)/sum(z0);
+      
+      % the node states
+      z_states = z;
+      y_states = y;
+      
+      % now run for all the iterations
+      for k=1:max_iter
+        % get the indices that are greater than zero
+        z_idcs = find(z > 0);
+        % now get the ceil for the y-states based on the predicate above
+        y_states(z_idcs) = ceil(y(z_idcs)./z(z_idcs));
+      end
+      
+      fprintf(" -- Finished for node size: %d", nodes);
     end
     fprintf("** Finished trial %d\n", t);
 end
