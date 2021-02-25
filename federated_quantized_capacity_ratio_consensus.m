@@ -108,11 +108,6 @@ for t=trials_arr
           min_votes = floor(vote_states); 
         end
         
-        
-        % get the max/min
-%         first_max(k) = max(non_zeros);
-%         first_min(k) = min(non_zeros(non_zeros > 0));
-        
         % get the nodes that need to be adjusted
         n_idcs = find(z > 1);
         
