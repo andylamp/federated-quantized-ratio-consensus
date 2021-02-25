@@ -77,13 +77,7 @@ for t=trials_arr
       
       % the node states
       z_states = z;
-      y_states = y;
-      
-%       % variables to hold the max/nim
-%       first_max = NaN(max_iter, 1);
-%       first_min = NaN(max_iter, 1);
-%       % 
-%       non_zeros = zeros(nodes, 1);      
+      y_states = y;    
 
       % plot variables
       max_plot = NaN(max_iter, 1);
