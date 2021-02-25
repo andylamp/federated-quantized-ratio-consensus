@@ -75,24 +75,98 @@ for t=trials_arr
       % firstly, lets generate the graph
       [~, diameter, nodes, adjMatrix] = gen_graph(nodes);
       
-      % transmit the nodes
-      transm_z = zeros(nodes);
-      transm_y = zeros(nodes);
-      
       % the node states
       z_states = z;
       y_states = y;
       
-      % variables to hold the max/nim
-      first_max = NaN(max_iter, 1);
-      first_min = NaN(max_iter, 1);
+%       % variables to hold the max/nim
+%       first_max = NaN(max_iter, 1);
+%       first_min = NaN(max_iter, 1);
+%       % 
+%       non_zeros = zeros(nodes, 1);      
+
+      % plot variables
+      max_plot = NaN(max_iter, 1);
+      min_plot = NaN(max_iter, 1);
+      
+      % our termination flag
+      can_terminate = 0;
       
       % now run for all the iterations
       for k=1:max_iter
+        
+        % transmission buffers for the nodes
+        transm_z = zeros(nodes, nodes);
+        transm_y = zeros(nodes, nodes);
+        
         % get the indices that are greater than zero
         z_idcs = find(z > 0);
         % now get the ceil for the y-states based on the predicate above
         y_states(z_idcs) = ceil(y(z_idcs)./z(z_idcs));
+        
+        % get current y states of the nodes
+        y_states = y_states .* z0;
+        
+        % check if the diameter is right for us to check
+        if mod(k, diameter) == 1
+          vote_states = y ./ z;
+          max_votes = ceil(vote_states);
+          min_votes = floor(vote_states); 
+        end
+        
+        
+        % get the max/min
+%         first_max(k) = max(non_zeros);
+%         first_min(k) = min(non_zeros(non_zeros > 0));
+        
+        % get the nodes that need to be adjusted
+        n_idcs = find(z > 1);
+        
+        
+        % -- transmission process -- %
+        
+        % outgoing transmission
+        for idc=1:length(n_idcs)
+          out_edge = n_idcs(idc);
+          while z(out_edge) > 1
+            % get a random node out of the available pool
+            node = randi(nodes);
+            
+            % now adjust the transmitted weights
+            if adjMatrix(node, out_edge) > 0
+              flr = floor(y(out_edge) / z(out_edge));
+              transm_y(node, out_edge) = transm_y(node, out_edge) + flr;
+              transm_z(node, out_edge) = transm_z(node, out_edge) + 1;
+              
+              y(out_edge) = y(out_edge) - flr;
+              z(out_edge) = z(out_edge) - 1;
+            end
+            
+          end
+          
+        end
+        
+        % sum with the incoming transmitted values
+        y = y + sum(transm_y, 2);
+        z = z + sum(transm_z, 2);
+        
+        % -- end transmission process -- %
+        
+        % find the min/max votes after values settle
+        [v_row, v_col] = find(adjMatrix == 1);
+        max_votes = max(max_votes(v_row), max_votes(v_col));
+        min_votes = min(min_votes(v_row), min_votes(v_col));
+        
+        % check if the termination condition is met
+        if mod(k, diameter) == 0
+        end
+        
+        
+        % check if we can terminate
+        if can_terminate == 1
+          break
+        end
+        
       end
       
       fprintf(" -- Finished for node size: %d", nodes);
