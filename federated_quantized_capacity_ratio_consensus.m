@@ -51,15 +51,26 @@ for t=trials_arr
     for n=node_to_test_len
       nodes = nodes_to_test(n);
       fprintf(" -- Running for node size: %d", nodes);
+      
       % generate the capacity for z0
       z0 = gen_workload(nodes);
       % now generate the capacity for y0
       y0_opt.multiplier = quantization_step;
       y0_opt.distribution_type = "randomised";
       y0 = gen_workload(nodes, y0_opt);
+      sum_y0 = sum(y0);
+      sum_z0 = sum(z0);
+      
+      % set the initialisation values
+      z = z0;
+      y = y0;
+      init_avg = sum_y0 / sum_z0;
       
       % sanity check to ensure that the invariant holds
       assert(sum(y0) > sum(z0));
+      
+      fprintf(" == DEBUG INFO: Initial Average %d, sum(y0): %d, sum(z0): %d", ...
+        init_avg, sum_y0, sum_z0);
       
       % firstly, lets generate the graph
       [~, diameter, nodes, adjMatrix] = gen_graph(nodes);
@@ -68,14 +79,13 @@ for t=trials_arr
       transm_z = zeros(nodes);
       transm_y = zeros(nodes);
       
-      % set the initialisation values
-      z = z0;
-      y = y0;
-      init_avg = sum(y0)/sum(z0);
-      
       % the node states
       z_states = z;
       y_states = y;
+      
+      % variables to hold the max/nim
+      first_max = NaN(max_iter, 1);
+      first_min = NaN(max_iter, 1);
       
       % now run for all the iterations
       for k=1:max_iter
