@@ -42,6 +42,9 @@ trials = 2;
 % trials = 5;
 trials_arr = 1:trials;
 
+% epsilon to stop
+epsilon = 1;
+
 % the quantisation step to use
 quantization_step = 100;
 
@@ -50,7 +53,7 @@ for t=trials_arr
     
     for n=node_to_test_len
       nodes = nodes_to_test(n);
-      fprintf(" -- Running for node size: %d", nodes);
+      fprintf(" -- Running for node size: %d\n", nodes);
       
       % generate the capacity for z0
       z0 = gen_workload(nodes);
@@ -69,7 +72,7 @@ for t=trials_arr
       % sanity check to ensure that the invariant holds
       assert(sum(y0) > sum(z0));
       
-      fprintf(" == DEBUG INFO: Initial Average %d, sum(y0): %d, sum(z0): %d", ...
+      fprintf(" == DEBUG INFO: Initial Average %d, sum(y0): %d, sum(z0): %d\n", ...
         init_avg, sum_y0, sum_z0);
       
       % firstly, lets generate the graph
@@ -148,6 +151,9 @@ for t=trials_arr
         
         % check if the termination condition is met
         if mod(k, diameter) == 0
+          if max_votes - min_votes < epsilon
+            can_terminate = 1;
+          end
         end
         
         
@@ -158,7 +164,7 @@ for t=trials_arr
         
       end
       
-      fprintf(" -- Finished for node size: %d", nodes);
+      fprintf(" -- Finished for node size: %d\n", nodes);
     end
     fprintf("** Finished trial %d\n", t);
 end
