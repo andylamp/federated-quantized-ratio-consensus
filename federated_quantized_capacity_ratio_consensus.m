@@ -156,7 +156,6 @@ for t=trials_arr
           end
         end
         
-        
         % check if we can terminate
         if can_terminate == 1
           break
@@ -164,7 +163,7 @@ for t=trials_arr
         
       end
       
-      fprintf("\t== DEBUG INFO: \n\t Converged at iteration: %d\n\t Initial avg: %d, \n\t Final avg: %d\n", ...
+      fprintf("\t== DEBUG INFO: \n\t Converged at iteration: %d\n\t Initial avg: %d, \n\t Final avg:   %d\n", ...
         k, init_avg, sum_y0/sum_z0);
       if can_terminate == 0
         fprintf("\t^^ ERROR: exhauted max iterations (max=%d) for converging\n", k);
