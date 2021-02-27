@@ -46,7 +46,21 @@ trials_arr = 1:trials;
 epsilon = 1;
 
 % the quantisation step to use
-quantization_step = 100;
+quantisation_step = 100;
+
+% converge statistics
+cov_min_global = zeros(node_to_test_len, trials);
+cov_max_global = zeros(node_to_test_len, trials);
+cov_mean_global = zeros(node_to_test_len, trials);
+cov_win_global = zeros(node_to_test_len, trials);
+
+% execution time
+total_time_global = zeros(node_to_test_len, trials);
+
+% setup variables
+params.type = "quant-normal";   % normal async
+params.pflag = 0;               % enable printing
+params = setup_vars(params);    % setup environment variables
 
 for t=trials_arr
     fprintf("\n** Running trial %d\n", t);
@@ -58,7 +72,7 @@ for t=trials_arr
       % generate the capacity for z0
       z0 = gen_workload(nodes);
       % now generate the capacity for y0
-      y0_opt.multiplier = quantization_step;
+      y0_opt.multiplier = quantisation_step;
       y0_opt.distribution_type = "randomised";
       y0 = gen_workload(nodes, y0_opt);
       sum_y0 = sum(y0);
@@ -72,7 +86,7 @@ for t=trials_arr
       % sanity check to ensure that the invariant holds
       assert(sum(y0) > sum(z0));
       
-      fprintf("\t== DEBUG INFO: Initial Average %d, sum(y0): %d, sum(z0): %d\n", ...
+      fprintf("\t== DEBUG INFO: \n\t Initial Average: %d,\n\t Sum(y0): %d,\n\t Sum(z0): %d.\n", ...
         init_avg, sum_y0, sum_z0);
       
       % firstly, lets generate the graph
@@ -88,6 +102,9 @@ for t=trials_arr
       
       % our termination flag
       can_terminate = 0;
+      
+      % start ticking the global one
+      global_tic = tic;
       
       % now run for all the iterations
       for k=1:max_iter
@@ -163,10 +180,13 @@ for t=trials_arr
         
       end
       
-      fprintf("\t== DEBUG INFO: \n\t Converged at iteration: %d\n\t Initial avg: %d, \n\t Final avg:   %d\n", ...
-        k, init_avg, sum_y0/sum_z0);
+      % record the time it took to converge
+      total_time_global(n, t) = toc(global_tic);
+      
+      fprintf("\t== DEBUG INFO: \n\t Converged at iteration:  %d (ouf ot max: %d),\n\t Initial avg:  %d, \n\t Final avg:    %d,\n\t Time elapsed: %d seconds.\n", ...
+        k, max_iter, init_avg, sum_y0/sum_z0, total_time_global(n, t));
       if can_terminate == 0
-        fprintf("\t^^ ERROR: exhauted max iterations (max=%d) for converging\n", k);
+        fprintf("\t^^ ERROR: Exhausted max iterations (max=%d) for converging -- stopping\n", k);
       else
         fprintf("\t^^ INFO: Converged after %d out of %d iterations for %d nodes\n", k, max_iter, nodes);
       end
