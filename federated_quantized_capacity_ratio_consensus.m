@@ -72,7 +72,7 @@ for t=trials_arr
       % sanity check to ensure that the invariant holds
       assert(sum(y0) > sum(z0));
       
-      fprintf(" == DEBUG INFO: Initial Average %d, sum(y0): %d, sum(z0): %d\n", ...
+      fprintf("\t== DEBUG INFO: Initial Average %d, sum(y0): %d, sum(z0): %d\n", ...
         init_avg, sum_y0, sum_z0);
       
       % firstly, lets generate the graph
@@ -151,7 +151,7 @@ for t=trials_arr
         
         % check if the termination condition is met
         if mod(k, diameter) == 0
-          if max_votes - min_votes < epsilon
+          if max_votes - min_votes <= epsilon
             can_terminate = 1;
           end
         end
@@ -162,6 +162,14 @@ for t=trials_arr
           break
         end
         
+      end
+      
+      fprintf("\t== DEBUG INFO: \n\t Converged at iteration: %d\n\t Initial avg: %d, \n\t Final avg: %d\n", ...
+        k, init_avg, sum_y0/sum_z0);
+      if can_terminate == 0
+        fprintf("\t^^ ERROR: exhauted max iterations (max=%d) for converging\n", k);
+      else
+        fprintf("\t^^ INFO: Converged after %d out of %d iterations for %d nodes\n", k, max_iter, nodes);
       end
       
       fprintf(" -- Finished for node size: %d\n", nodes);
