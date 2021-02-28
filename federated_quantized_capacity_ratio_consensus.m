@@ -56,6 +56,7 @@ cov_win_global = zeros(nodes_to_test_len, trials);
 
 % execution time
 total_time_global = zeros(nodes_to_test_len, trials);
+total_trial_time = zeros(trials, 1);
 
 % setup variables
 params.type = "quant-normal";   % normal async
@@ -64,7 +65,7 @@ params = setup_vars(params);    % setup environment variables
 
 for t=trials_arr
     fprintf("\n** Running trial %d\n", t);
-    
+    trial_tic = tic;
     for n=nodes_to_test_len
       nodes = nodes_to_test(n);
       fprintf(" -- Running for node size: %d\n", nodes);
@@ -213,8 +214,13 @@ for t=trials_arr
       
       fprintf(" -- Finished for node size: %d\n", nodes);
     end
-    fprintf("** Finished trial %d\n", t);
+    trial_toc = toc(trial_tic);
+    fprintf("** Finished trial %d, elapsed time: %d seconds\n", t, trial_toc);
+    total_trial_time(t) = trial_toc;
 end
+
+fprintf("== Finished running %d trials, total time elapsed: %d seconds\n", ...
+  t, sum(total_trial_time));
 
 % -- plot execution time -- %
 
