@@ -32,9 +32,9 @@ graph_connectivity = 0.5;
 nodes_to_test = [20, 50]; % , 100, 150, 200, 400, 600
 % nodes for "large scale" testing
 % nodes_to_test = [20, 200, 500, 1000, 5000, 10000];
-node_to_test_len = length(nodes_to_test);
+nodes_to_test_len = length(nodes_to_test);
 % set the node length as a convenience variable
-node_len_array = 1:node_to_test_len;
+node_len_array = 1:nodes_to_test_len;
 
 % trials for regular testing
 trials = 2;
@@ -49,13 +49,13 @@ epsilon = 1;
 quantisation_step = 100;
 
 % converge statistics
-cov_min_global = zeros(node_to_test_len, trials);
-cov_max_global = zeros(node_to_test_len, trials);
-cov_mean_global = zeros(node_to_test_len, trials);
-cov_win_global = zeros(node_to_test_len, trials);
+cov_min_global = zeros(nodes_to_test_len, trials);
+cov_max_global = zeros(nodes_to_test_len, trials);
+cov_mean_global = zeros(nodes_to_test_len, trials);
+cov_win_global = zeros(nodes_to_test_len, trials);
 
 % execution time
-total_time_global = zeros(node_to_test_len, trials);
+total_time_global = zeros(nodes_to_test_len, trials);
 
 % setup variables
 params.type = "quant-normal";   % normal async
@@ -65,7 +65,7 @@ params = setup_vars(params);    % setup environment variables
 for t=trials_arr
     fprintf("\n** Running trial %d\n", t);
     
-    for n=node_to_test_len
+    for n=nodes_to_test_len
       nodes = nodes_to_test(n);
       fprintf(" -- Running for node size: %d\n", nodes);
       
@@ -195,4 +195,33 @@ for t=trials_arr
     end
     fprintf("** Finished trial %d\n", t);
 end
+
+% -- plot execution time -- %
+
+fig = figure;
+hold on; box on;
+  cur = total_time_global;
+  err_std = std(cur, 0, 2)' / sqrt(trials);
+  errorbar(node_len_array, mean(cur, 2)', err_std, "LineWidth", 2);
+hold off;
+
+ylabel("Time (s)", ...
+  "Interpreter", "Latex", "FontName", "Times New Roman");
+xlabel("Nodes", ...
+  "Interpreter", "Latex", "FontName", "Times New Roman");
+title("Total time to converge", ...
+  "Interpreter", "Latex", "FontName", "Times New Roman");
+xticks(node_len_array)
+xticklabels(num2cell(nodes_to_test))
+%legend("secs");
+
+% print the figure 
+st = sprintf("nmax_%d_trials_%d_total_exec_time", ...
+  nodes_to_test(end), trials);
+print_fig(fig, st, params);
+
+% -- finished plotting execution time -- %
+
+
+
 
