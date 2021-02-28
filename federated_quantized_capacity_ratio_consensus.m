@@ -100,8 +100,18 @@ for t=trials_arr
       max_plot = NaN(max_iter, 1);
       min_plot = NaN(max_iter, 1);
       
-      % our termination flag
-      can_terminate = 0;
+      % node converge statistics, the structure is as follows:
+      %
+      % row count: nodes
+      %
+      % description of each column:
+      %
+      % 1. min iteration that satisfied the constraint
+      % 2. max iteration that satisfied the constraint (and then not
+      % changed)
+      % 3. number of flips between min, max
+      %
+      node_stats = zeros(nodes, 3);
       
       % start ticking the global one
       global_tic = tic;
@@ -162,30 +172,40 @@ for t=trials_arr
         % -- end transmission process -- %
         
         % find the min/max votes after values settle
-        [v_row, v_col] = find(adjMatrix == 1);
-        max_votes = max(max_votes(v_row), max_votes(v_col));
-        min_votes = min(min_votes(v_row), min_votes(v_col));
+        for h=node_len_array
+          [~, cols] = find(adjMatrix(h, :) == 1);
+          max_votes(h) = max(max_votes(h), max(max_votes(cols)));
+          min_votes(h) = min(min_votes(h), min(min_votes(cols)));
+        end
         
         % check if the termination condition is met
         if mod(k, diameter) == 0
-          if max_votes - min_votes <= epsilon
-            can_terminate = 1;
+          vote_index = max_votes - min_votes <= epsilon;
+          nodes_converged = find(vote_index == 0);
+          nodes_diverged = ~nodes_converged;
+          
+          %min(node_stats(:, 1))
+          
+          % check if we can terminate, which is when all votes are raised
+          if vote_index
+            break;
           end
         end
         
-        % check if we can terminate
-        if can_terminate == 1
-          break
-        end
-        
       end
+      
+      % compute the stats
+      cov_min = min(node_stats(:, 1));        % min converge.
+      cov_max = max(node_stats(:, 2));        % max converge.
+      cov_mean = mean(node_stats(:, 2));      % mean converge for max
+      flip_per = sum(node_stats(:, 3))/nodes; % flip percentage.
       
       % record the time it took to converge
       total_time_global(n, t) = toc(global_tic);
       
       fprintf("\t== DEBUG INFO: \n\t Converged at iteration:  %d (ouf ot max: %d),\n\t Initial avg:  %d, \n\t Final avg:    %d,\n\t Time elapsed: %d seconds.\n", ...
         k, max_iter, init_avg, sum_y0/sum_z0, total_time_global(n, t));
-      if can_terminate == 0
+      if k >= max_iter
         fprintf("\t^^ ERROR: Exhausted max iterations (max=%d) for converging -- stopping\n", k);
       else
         fprintf("\t^^ INFO: Converged after %d out of %d iterations for %d nodes\n", k, max_iter, nodes);
@@ -221,6 +241,11 @@ st = sprintf("nmax_%d_trials_%d_total_exec_time", ...
 print_fig(fig, st, params);
 
 % -- finished plotting execution time -- %
+
+% -- plot convergence statistics -- %
+
+
+% -- finished plotting convergence statistics -- %
 
 
 
