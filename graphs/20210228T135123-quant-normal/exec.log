@@ -1,0 +1,1344 @@
+
+ !! Detected Windows PC !!
+
+ !! Execution parameters
+
+
+
+ !! Printing functionality is: ENABLED
+
+	** Trying to create save folder in: .\graphs\20210228T135123-quant-normal
+	** Folder .\graphs\20210228T135123-quant-normal created successfully
+	** Target graph dir: .\graphs\20210228T135123-quant-normal\
+	** Printing to .fig format is: ENABLED
+
+** Running trial 1
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 8.933333e+01,
+	 Sum(y0): 26800,
+	 Sum(z0): 300.
+	$$ Graph gen took 5 iterations, diameter 6 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  18 (ouf ot max: 100),
+	 Initial avg:  8.933333e+01, 
+	 Final avg:    8.933333e+01,
+	 Time elapsed: 1.352490e-02 seconds.
+	^^ INFO: Converged after 18 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 1.841333e+02,
+	 Sum(y0): 138100,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  16 (ouf ot max: 100),
+	 Initial avg:  1.841333e+02, 
+	 Final avg:    1.841333e+02,
+	 Time elapsed: 1.005250e-02 seconds.
+	^^ INFO: Converged after 16 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.494667e+02,
+	 Sum(y0): 524200,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.494667e+02, 
+	 Final avg:    3.494667e+02,
+	 Time elapsed: 1.141510e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 6.477000e+02,
+	 Sum(y0): 1943100,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  6.477000e+02, 
+	 Final avg:    6.477000e+02,
+	 Time elapsed: 2.101200e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.236533e+02,
+	 Sum(y0): 3088700,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  8.236533e+02, 
+	 Final avg:    8.236533e+02,
+	 Time elapsed: 2.467070e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 9.814222e+02,
+	 Sum(y0): 4416400,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  9.814222e+02, 
+	 Final avg:    9.814222e+02,
+	 Time elapsed: 2.906820e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.121105e+03,
+	 Sum(y0): 5885800,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.121105e+03, 
+	 Final avg:    1.121105e+03,
+	 Time elapsed: 4.163080e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.334283e+03,
+	 Sum(y0): 8005700,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.334283e+03, 
+	 Final avg:    1.334283e+03,
+	 Time elapsed: 3.920510e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.719093e+03,
+	 Sum(y0): 12893200,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.719093e+03, 
+	 Final avg:    1.719093e+03,
+	 Time elapsed: 6.587660e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 2.017100e+03,
+	 Sum(y0): 18153900,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 2 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  2.017100e+03, 
+	 Final avg:    2.017100e+03,
+	 Time elapsed: 6.914480e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 1, elapsed time: 4.098269e-01 seconds
+
+** Running trial 2
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 6.433333e+01,
+	 Sum(y0): 19300,
+	 Sum(z0): 300.
+	$$ Graph gen took 0 iterations, diameter 7 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  21 (ouf ot max: 100),
+	 Initial avg:  6.433333e+01, 
+	 Final avg:    6.433333e+01,
+	 Time elapsed: 4.003600e-03 seconds.
+	^^ INFO: Converged after 21 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 194,
+	 Sum(y0): 145500,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  36 (ouf ot max: 100),
+	 Initial avg:  194, 
+	 Final avg:    194,
+	 Time elapsed: 1.345850e-02 seconds.
+	^^ INFO: Converged after 36 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.486667e+02,
+	 Sum(y0): 523000,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.486667e+02, 
+	 Final avg:    3.486667e+02,
+	 Time elapsed: 7.836000e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 6.397667e+02,
+	 Sum(y0): 1919300,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  6.397667e+02, 
+	 Final avg:    6.397667e+02,
+	 Time elapsed: 1.674810e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.063200e+02,
+	 Sum(y0): 3023700,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  8.063200e+02, 
+	 Final avg:    8.063200e+02,
+	 Time elapsed: 2.091430e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 9.580889e+02,
+	 Sum(y0): 4311400,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  9.580889e+02, 
+	 Final avg:    9.580889e+02,
+	 Time elapsed: 3.292560e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.188590e+03,
+	 Sum(y0): 6240100,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.188590e+03, 
+	 Final avg:    1.188590e+03,
+	 Time elapsed: 3.126690e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.370100e+03,
+	 Sum(y0): 8220600,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.370100e+03, 
+	 Final avg:    1.370100e+03,
+	 Time elapsed: 4.924830e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.644053e+03,
+	 Sum(y0): 12330400,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.644053e+03, 
+	 Final avg:    1.644053e+03,
+	 Time elapsed: 6.698380e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 2.094444e+03,
+	 Sum(y0): 18850000,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  2.094444e+03, 
+	 Final avg:    2.094444e+03,
+	 Time elapsed: 6.908200e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 2, elapsed time: 3.808791e-01 seconds
+
+** Running trial 3
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 5.233333e+01,
+	 Sum(y0): 15700,
+	 Sum(z0): 300.
+	$$ Graph gen took 16 iterations, diameter 6 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  18 (ouf ot max: 100),
+	 Initial avg:  5.233333e+01, 
+	 Final avg:    5.233333e+01,
+	 Time elapsed: 3.339000e-03 seconds.
+	^^ INFO: Converged after 18 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 1.818667e+02,
+	 Sum(y0): 136400,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  16 (ouf ot max: 100),
+	 Initial avg:  1.818667e+02, 
+	 Final avg:    1.818667e+02,
+	 Time elapsed: 6.069900e-03 seconds.
+	^^ INFO: Converged after 16 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.608000e+02,
+	 Sum(y0): 541200,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.608000e+02, 
+	 Final avg:    3.608000e+02,
+	 Time elapsed: 7.846600e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 6.472000e+02,
+	 Sum(y0): 1941600,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  6.472000e+02, 
+	 Final avg:    6.472000e+02,
+	 Time elapsed: 1.915140e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.349067e+02,
+	 Sum(y0): 3130900,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  8.349067e+02, 
+	 Final avg:    8.349067e+02,
+	 Time elapsed: 2.669830e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 1.042889e+03,
+	 Sum(y0): 4693000,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.042889e+03, 
+	 Final avg:    1.042889e+03,
+	 Time elapsed: 3.309610e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.283162e+03,
+	 Sum(y0): 6736600,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.283162e+03, 
+	 Final avg:    1.283162e+03,
+	 Time elapsed: 3.982750e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.353200e+03,
+	 Sum(y0): 8119200,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.353200e+03, 
+	 Final avg:    1.353200e+03,
+	 Time elapsed: 4.045760e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.659827e+03,
+	 Sum(y0): 12448700,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.659827e+03, 
+	 Final avg:    1.659827e+03,
+	 Time elapsed: 7.593340e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 2.009767e+03,
+	 Sum(y0): 18087900,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 2 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  2.009767e+03, 
+	 Final avg:    2.009767e+03,
+	 Time elapsed: 8.115720e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 3, elapsed time: 4.160718e-01 seconds
+
+** Running trial 4
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 72,
+	 Sum(y0): 21600,
+	 Sum(z0): 300.
+	$$ Graph gen took 2 iterations, diameter 8 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  40 (ouf ot max: 100),
+	 Initial avg:  72, 
+	 Final avg:    72,
+	 Time elapsed: 8.691300e-03 seconds.
+	^^ INFO: Converged after 40 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 1.644000e+02,
+	 Sum(y0): 123300,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.644000e+02, 
+	 Final avg:    1.644000e+02,
+	 Time elapsed: 4.455400e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.452667e+02,
+	 Sum(y0): 517900,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.452667e+02, 
+	 Final avg:    3.452667e+02,
+	 Time elapsed: 7.906600e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 7.285333e+02,
+	 Sum(y0): 2185600,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  7.285333e+02, 
+	 Final avg:    7.285333e+02,
+	 Time elapsed: 1.781070e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.158933e+02,
+	 Sum(y0): 3059600,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  8.158933e+02, 
+	 Final avg:    8.158933e+02,
+	 Time elapsed: 2.648680e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 9.485333e+02,
+	 Sum(y0): 4268400,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  9.485333e+02, 
+	 Final avg:    9.485333e+02,
+	 Time elapsed: 2.622600e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.155429e+03,
+	 Sum(y0): 6066000,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.155429e+03, 
+	 Final avg:    1.155429e+03,
+	 Time elapsed: 3.410450e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.323683e+03,
+	 Sum(y0): 7942100,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.323683e+03, 
+	 Final avg:    1.323683e+03,
+	 Time elapsed: 4.252230e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.608200e+03,
+	 Sum(y0): 12061500,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.608200e+03, 
+	 Final avg:    1.608200e+03,
+	 Time elapsed: 5.574390e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 2.031056e+03,
+	 Sum(y0): 18279500,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 2 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  14 (ouf ot max: 100),
+	 Initial avg:  2.031056e+03, 
+	 Final avg:    2.031056e+03,
+	 Time elapsed: 7.998140e-02 seconds.
+	^^ INFO: Converged after 14 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 4, elapsed time: 3.750248e-01 seconds
+
+** Running trial 5
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 7.133333e+01,
+	 Sum(y0): 21400,
+	 Sum(z0): 300.
+	$$ Graph gen took 3 iterations, diameter 5 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  25 (ouf ot max: 100),
+	 Initial avg:  7.133333e+01, 
+	 Final avg:    7.133333e+01,
+	 Time elapsed: 5.246600e-03 seconds.
+	^^ INFO: Converged after 25 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 168,
+	 Sum(y0): 126000,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  56 (ouf ot max: 100),
+	 Initial avg:  168, 
+	 Final avg:    168,
+	 Time elapsed: 2.086690e-02 seconds.
+	^^ INFO: Converged after 56 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.487333e+02,
+	 Sum(y0): 523100,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.487333e+02, 
+	 Final avg:    3.487333e+02,
+	 Time elapsed: 7.804000e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 6.981667e+02,
+	 Sum(y0): 2094500,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  6.981667e+02, 
+	 Final avg:    6.981667e+02,
+	 Time elapsed: 1.693710e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.357067e+02,
+	 Sum(y0): 3133900,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  8.357067e+02, 
+	 Final avg:    8.357067e+02,
+	 Time elapsed: 2.146900e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 9.887778e+02,
+	 Sum(y0): 4449500,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  9.887778e+02, 
+	 Final avg:    9.887778e+02,
+	 Time elapsed: 2.611090e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.160590e+03,
+	 Sum(y0): 6093100,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.160590e+03, 
+	 Final avg:    1.160590e+03,
+	 Time elapsed: 3.276530e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.244850e+03,
+	 Sum(y0): 7469100,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.244850e+03, 
+	 Final avg:    1.244850e+03,
+	 Time elapsed: 4.876150e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.661187e+03,
+	 Sum(y0): 12458900,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.661187e+03, 
+	 Final avg:    1.661187e+03,
+	 Time elapsed: 5.399320e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 1.972089e+03,
+	 Sum(y0): 17748800,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 2 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.972089e+03, 
+	 Final avg:    1.972089e+03,
+	 Time elapsed: 6.898610e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 5, elapsed time: 3.767878e-01 seconds
+
+** Running trial 6
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 7.966667e+01,
+	 Sum(y0): 23900,
+	 Sum(z0): 300.
+	$$ Graph gen took 5 iterations, diameter 8 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  48 (ouf ot max: 100),
+	 Initial avg:  7.966667e+01, 
+	 Final avg:    7.966667e+01,
+	 Time elapsed: 9.240300e-03 seconds.
+	^^ INFO: Converged after 48 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 1.444000e+02,
+	 Sum(y0): 108300,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  16 (ouf ot max: 100),
+	 Initial avg:  1.444000e+02, 
+	 Final avg:    1.444000e+02,
+	 Time elapsed: 6.268300e-03 seconds.
+	^^ INFO: Converged after 16 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.118667e+02,
+	 Sum(y0): 467800,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.118667e+02, 
+	 Final avg:    3.118667e+02,
+	 Time elapsed: 7.953400e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 6.720333e+02,
+	 Sum(y0): 2016100,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  18 (ouf ot max: 100),
+	 Initial avg:  6.720333e+02, 
+	 Final avg:    6.720333e+02,
+	 Time elapsed: 2.508980e-02 seconds.
+	^^ INFO: Converged after 18 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.565600e+02,
+	 Sum(y0): 3212100,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  8.565600e+02, 
+	 Final avg:    8.565600e+02,
+	 Time elapsed: 2.119090e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 1.004022e+03,
+	 Sum(y0): 4518100,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  18 (ouf ot max: 100),
+	 Initial avg:  1.004022e+03, 
+	 Final avg:    1.004022e+03,
+	 Time elapsed: 4.084170e-02 seconds.
+	^^ INFO: Converged after 18 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.168248e+03,
+	 Sum(y0): 6133300,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.168248e+03, 
+	 Final avg:    1.168248e+03,
+	 Time elapsed: 3.219030e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.321917e+03,
+	 Sum(y0): 7931500,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.321917e+03, 
+	 Final avg:    1.321917e+03,
+	 Time elapsed: 5.049770e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.656840e+03,
+	 Sum(y0): 12426300,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.656840e+03, 
+	 Final avg:    1.656840e+03,
+	 Time elapsed: 7.000880e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 2.053456e+03,
+	 Sum(y0): 18481100,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 2 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  10 (ouf ot max: 100),
+	 Initial avg:  2.053456e+03, 
+	 Final avg:    2.053456e+03,
+	 Time elapsed: 6.073730e-02 seconds.
+	^^ INFO: Converged after 10 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 6, elapsed time: 3.972956e-01 seconds
+
+** Running trial 7
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 6.266667e+01,
+	 Sum(y0): 18800,
+	 Sum(z0): 300.
+	$$ Graph gen took 11 iterations, diameter 6 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  24 (ouf ot max: 100),
+	 Initial avg:  6.266667e+01, 
+	 Final avg:    6.266667e+01,
+	 Time elapsed: 4.609200e-03 seconds.
+	^^ INFO: Converged after 24 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 1.701333e+02,
+	 Sum(y0): 127600,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  16 (ouf ot max: 100),
+	 Initial avg:  1.701333e+02, 
+	 Final avg:    1.701333e+02,
+	 Time elapsed: 6.460200e-03 seconds.
+	^^ INFO: Converged after 16 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.501333e+02,
+	 Sum(y0): 525200,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.501333e+02, 
+	 Final avg:    3.501333e+02,
+	 Time elapsed: 7.710300e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 6.322667e+02,
+	 Sum(y0): 1896800,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  6.322667e+02, 
+	 Final avg:    6.322667e+02,
+	 Time elapsed: 1.688340e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.597867e+02,
+	 Sum(y0): 3224200,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  8.597867e+02, 
+	 Final avg:    8.597867e+02,
+	 Time elapsed: 2.170500e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 1.030067e+03,
+	 Sum(y0): 4635300,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.030067e+03, 
+	 Final avg:    1.030067e+03,
+	 Time elapsed: 5.140460e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.211181e+03,
+	 Sum(y0): 6358700,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.211181e+03, 
+	 Final avg:    1.211181e+03,
+	 Time elapsed: 3.386410e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.338400e+03,
+	 Sum(y0): 8030400,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.338400e+03, 
+	 Final avg:    1.338400e+03,
+	 Time elapsed: 4.138030e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.679733e+03,
+	 Sum(y0): 12598000,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.679733e+03, 
+	 Final avg:    1.679733e+03,
+	 Time elapsed: 5.405490e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 1.959389e+03,
+	 Sum(y0): 17634500,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.959389e+03, 
+	 Final avg:    1.959389e+03,
+	 Time elapsed: 7.065980e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 7, elapsed time: 3.870255e-01 seconds
+
+** Running trial 8
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 5.433333e+01,
+	 Sum(y0): 16300,
+	 Sum(z0): 300.
+	$$ Graph gen took 9 iterations, diameter 6 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  18 (ouf ot max: 100),
+	 Initial avg:  5.433333e+01, 
+	 Final avg:    5.433333e+01,
+	 Time elapsed: 3.859700e-03 seconds.
+	^^ INFO: Converged after 18 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 1.681333e+02,
+	 Sum(y0): 126100,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  16 (ouf ot max: 100),
+	 Initial avg:  1.681333e+02, 
+	 Final avg:    1.681333e+02,
+	 Time elapsed: 6.345900e-03 seconds.
+	^^ INFO: Converged after 16 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.668000e+02,
+	 Sum(y0): 550200,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.668000e+02, 
+	 Final avg:    3.668000e+02,
+	 Time elapsed: 8.029100e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 7.035000e+02,
+	 Sum(y0): 2110500,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  7.035000e+02, 
+	 Final avg:    7.035000e+02,
+	 Time elapsed: 1.665370e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.205333e+02,
+	 Sum(y0): 3077000,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  8.205333e+02, 
+	 Final avg:    8.205333e+02,
+	 Time elapsed: 2.137300e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 1.090200e+03,
+	 Sum(y0): 4905900,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.090200e+03, 
+	 Final avg:    1.090200e+03,
+	 Time elapsed: 2.686060e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.154610e+03,
+	 Sum(y0): 6061700,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.154610e+03, 
+	 Final avg:    1.154610e+03,
+	 Time elapsed: 3.181020e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.361133e+03,
+	 Sum(y0): 8166800,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.361133e+03, 
+	 Final avg:    1.361133e+03,
+	 Time elapsed: 5.099010e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.591333e+03,
+	 Sum(y0): 11935000,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.591333e+03, 
+	 Final avg:    1.591333e+03,
+	 Time elapsed: 5.351250e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 1.978400e+03,
+	 Sum(y0): 17805600,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 2 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  10 (ouf ot max: 100),
+	 Initial avg:  1.978400e+03, 
+	 Final avg:    1.978400e+03,
+	 Time elapsed: 5.757320e-02 seconds.
+	^^ INFO: Converged after 10 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 8, elapsed time: 3.518954e-01 seconds
+
+** Running trial 9
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 64,
+	 Sum(y0): 19200,
+	 Sum(z0): 300.
+	$$ Graph gen took 1 iterations, diameter 5 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  55 (ouf ot max: 100),
+	 Initial avg:  64, 
+	 Final avg:    64,
+	 Time elapsed: 9.449600e-03 seconds.
+	^^ INFO: Converged after 55 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 1.613333e+02,
+	 Sum(y0): 121000,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.613333e+02, 
+	 Final avg:    1.613333e+02,
+	 Time elapsed: 4.564000e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.328000e+02,
+	 Sum(y0): 499200,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  3.328000e+02, 
+	 Final avg:    3.328000e+02,
+	 Time elapsed: 8.229300e-03 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 6.643667e+02,
+	 Sum(y0): 1993100,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  6.643667e+02, 
+	 Final avg:    6.643667e+02,
+	 Time elapsed: 1.719030e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.530400e+02,
+	 Sum(y0): 3198900,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  18 (ouf ot max: 100),
+	 Initial avg:  8.530400e+02, 
+	 Final avg:    8.530400e+02,
+	 Time elapsed: 3.227350e-02 seconds.
+	^^ INFO: Converged after 18 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 9.728667e+02,
+	 Sum(y0): 4377900,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  9.728667e+02, 
+	 Final avg:    9.728667e+02,
+	 Time elapsed: 3.714430e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.158629e+03,
+	 Sum(y0): 6082800,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.158629e+03, 
+	 Final avg:    1.158629e+03,
+	 Time elapsed: 3.272300e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.367850e+03,
+	 Sum(y0): 8207100,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.367850e+03, 
+	 Final avg:    1.367850e+03,
+	 Time elapsed: 4.886700e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.684347e+03,
+	 Sum(y0): 12632600,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.684347e+03, 
+	 Final avg:    1.684347e+03,
+	 Time elapsed: 5.751360e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 2.013089e+03,
+	 Sum(y0): 18117800,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 2 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  2.013089e+03, 
+	 Final avg:    2.013089e+03,
+	 Time elapsed: 7.308170e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 9, elapsed time: 3.976349e-01 seconds
+
+** Running trial 10
+ -- Running for node size: 20
+	== DEBUG INFO: 
+	 Initial Average: 6.066667e+01,
+	 Sum(y0): 18200,
+	 Sum(z0): 300.
+	$$ Graph gen took 9 iterations, diameter 6 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  18 (ouf ot max: 100),
+	 Initial avg:  6.066667e+01, 
+	 Final avg:    6.066667e+01,
+	 Time elapsed: 3.140200e-03 seconds.
+	^^ INFO: Converged after 18 out of 100 iterations for 20 nodes
+ -- Finished for node size: 20
+ -- Running for node size: 50
+	== DEBUG INFO: 
+	 Initial Average: 1.552000e+02,
+	 Sum(y0): 116400,
+	 Sum(z0): 750.
+	$$ Graph gen took 0 iterations, diameter 4 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  16 (ouf ot max: 100),
+	 Initial avg:  1.552000e+02, 
+	 Final avg:    1.552000e+02,
+	 Time elapsed: 5.823900e-03 seconds.
+	^^ INFO: Converged after 16 out of 100 iterations for 50 nodes
+ -- Finished for node size: 50
+ -- Running for node size: 100
+	== DEBUG INFO: 
+	 Initial Average: 3.450667e+02,
+	 Sum(y0): 517600,
+	 Sum(z0): 1500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  3.450667e+02, 
+	 Final avg:    3.450667e+02,
+	 Time elapsed: 9.782900e-03 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 100 nodes
+ -- Finished for node size: 100
+ -- Running for node size: 200
+	== DEBUG INFO: 
+	 Initial Average: 6.675333e+02,
+	 Sum(y0): 2002600,
+	 Sum(z0): 3000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  6.675333e+02, 
+	 Final avg:    6.675333e+02,
+	 Time elapsed: 1.707340e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 200 nodes
+ -- Finished for node size: 200
+ -- Running for node size: 250
+	== DEBUG INFO: 
+	 Initial Average: 8.475200e+02,
+	 Sum(y0): 3178200,
+	 Sum(z0): 3750.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  8.475200e+02, 
+	 Final avg:    8.475200e+02,
+	 Time elapsed: 2.125610e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 250 nodes
+ -- Finished for node size: 250
+ -- Running for node size: 300
+	== DEBUG INFO: 
+	 Initial Average: 9.521556e+02,
+	 Sum(y0): 4284700,
+	 Sum(z0): 4500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  9.521556e+02, 
+	 Final avg:    9.521556e+02,
+	 Time elapsed: 2.597860e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 300 nodes
+ -- Finished for node size: 300
+ -- Running for node size: 350
+	== DEBUG INFO: 
+	 Initial Average: 1.184305e+03,
+	 Sum(y0): 6217600,
+	 Sum(z0): 5250.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.184305e+03, 
+	 Final avg:    1.184305e+03,
+	 Time elapsed: 3.198770e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 350 nodes
+ -- Finished for node size: 350
+ -- Running for node size: 400
+	== DEBUG INFO: 
+	 Initial Average: 1.292083e+03,
+	 Sum(y0): 7752500,
+	 Sum(z0): 6000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  15 (ouf ot max: 100),
+	 Initial avg:  1.292083e+03, 
+	 Final avg:    1.292083e+03,
+	 Time elapsed: 4.931190e-02 seconds.
+	^^ INFO: Converged after 15 out of 100 iterations for 400 nodes
+ -- Finished for node size: 400
+ -- Running for node size: 500
+	== DEBUG INFO: 
+	 Initial Average: 1.679827e+03,
+	 Sum(y0): 12598700,
+	 Sum(z0): 7500.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  12 (ouf ot max: 100),
+	 Initial avg:  1.679827e+03, 
+	 Final avg:    1.679827e+03,
+	 Time elapsed: 5.396310e-02 seconds.
+	^^ INFO: Converged after 12 out of 100 iterations for 500 nodes
+ -- Finished for node size: 500
+ -- Running for node size: 600
+	== DEBUG INFO: 
+	 Initial Average: 2.058022e+03,
+	 Sum(y0): 18522200,
+	 Sum(z0): 9000.
+	$$ Graph gen took 0 iterations, diameter 3 - connection type: strong
+	== DEBUG INFO: 
+	 Converged at iteration:  30 (ouf ot max: 100),
+	 Initial avg:  2.058022e+03, 
+	 Final avg:    2.058022e+03,
+	 Time elapsed: 1.720291e-01 seconds.
+	^^ INFO: Converged after 30 out of 100 iterations for 600 nodes
+ -- Finished for node size: 600
+** Finished trial 10, elapsed time: 4.637702e-01 seconds
+== Finished running 10 trials, total time elapsed: 3.956212e+00 seconds
