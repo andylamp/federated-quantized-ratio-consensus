@@ -29,7 +29,7 @@ max_iter = 100;
 % the graph connectivity target
 graph_connectivity = 0.5;
 % the number of nodes
-nodes_to_test = [20, 50]; % , 100, 150, 200, 400, 600
+nodes_to_test = [20, 50, 100, 200, 250, 300, 350, 400, 500, 600]; % , 100, 150, 200, 400, 600
 % nodes for "large scale" testing
 % nodes_to_test = [20, 200, 500, 1000, 5000, 10000];
 nodes_to_test_len = length(nodes_to_test);
@@ -37,7 +37,7 @@ nodes_to_test_len = length(nodes_to_test);
 node_len_array = 1:nodes_to_test_len;
 
 % trials for regular testing
-trials = 2;
+trials = 10;
 % trials for large scale testing
 % trials = 5;
 trials_arr = 1:trials;
@@ -60,13 +60,13 @@ total_trial_time = zeros(trials, 1);
 
 % setup variables
 params.type = "quant-normal";   % normal async
-params.pflag = 0;               % enable printing
+params.pflag = 1;               % enable printing
 params = setup_vars(params);    % setup environment variables
 
 for t=trials_arr
     fprintf("\n** Running trial %d\n", t);
     trial_tic = tic;
-    for n=nodes_to_test_len
+    for n=node_len_array
       nodes = nodes_to_test(n);
       fprintf(" -- Running for node size: %d\n", nodes);
       
@@ -110,9 +110,10 @@ for t=trials_arr
       % 1. min iteration that satisfied the constraint
       % 2. max iteration that satisfied the constraint (and then not
       % changed)
-      % 3. number of flips between min, max
+      % 3. number of flips between min, max (not used currently)
       %
       node_stats = zeros(nodes, 3);
+      node_stats(:, 1) = max_iter;
       
       % start ticking the global one
       global_tic = tic;
@@ -183,8 +184,11 @@ for t=trials_arr
         if mod(k, diameter) == 0
           vote_index = max_votes - min_votes <= epsilon;
           nodes_converged = find(vote_index == 0);
-          nodes_diverged = ~nodes_converged;
+          nodes_diverged = find(vote_index ~= 0);
           
+          a = 1;  
+          node_stats(nodes_converged, 1) = min(node_stats(nodes_converged, 1), k);
+          node_stats(nodes_converged, 2) = max(node_stats(nodes_converged, 2), k);
           %min(node_stats(:, 1))
           
           % check if we can terminate, which is when all votes are raised
@@ -199,7 +203,14 @@ for t=trials_arr
       cov_min = min(node_stats(:, 1));        % min converge.
       cov_max = max(node_stats(:, 2));        % max converge.
       cov_mean = mean(node_stats(:, 2));      % mean converge for max
-      flip_per = sum(node_stats(:, 3))/nodes; % flip percentage.
+      % flip_per = sum(node_stats(:, 3))/nodes; % flip percentage.
+      
+      % update the variables.
+      cov_min_global(n, t) = cov_min;
+      cov_max_global(n, t) = cov_max;
+      cov_mean_global(n, t) = cov_mean;
+      cov_win_global(n, t) = cov_max - cov_min; 
+      assert(cov_win_global(n, t) >= 0)      
       
       % record the time it took to converge
       total_time_global(n, t) = toc(global_tic);
@@ -239,7 +250,7 @@ title("Total time to converge", ...
   "Interpreter", "Latex", "FontName", "Times New Roman");
 xticks(node_len_array)
 xticklabels(num2cell(nodes_to_test))
-%legend("secs");
+legend("Seconds");
 
 % print the figure 
 st = sprintf("nmax_%d_trials_%d_total_exec_time", ...
