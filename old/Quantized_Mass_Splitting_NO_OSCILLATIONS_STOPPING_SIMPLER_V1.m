@@ -4,7 +4,7 @@ clc
 
 %largeconstant=10^10                %%% WORK ALSO FOR RING
 connectivity=0.5;                   
-nodes=1000;
+nodes=50;
 iter=100;
 
 Ad = zeros(nodes,nodes);

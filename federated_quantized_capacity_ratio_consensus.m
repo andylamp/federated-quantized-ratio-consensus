@@ -242,8 +242,80 @@ print_fig(fig, st, params);
 
 % -- finished plotting execution time -- %
 
+% -- plot convergence -- %
+
+msg = "Converge iterations";
+% create the figure
+fig = figure;
+
+% enable hold and boxing
+hold on; box on;
+  cur = cov_max_global;
+  err_std = std(cur, 0, 2)' / sqrt(trials);
+  errorbar(node_len_array, mean(cur, 2)', err_std, "LineWidth", 2);
+hold off;
+
+% handle figure presentation
+ylabel("Iterations", "FontName", "Times New Roman");
+xlabel("Nodes", "Interpreter", "Latex", "FontName", "Times New Roman");
+st = sprintf(msg);
+title(st, "Interpreter", "Latex", "FontName", "Times New Roman");
+xticks(node_len_array)
+xticklabels(num2cell(nodes_to_test))
+legend("Iterations");
+
+% print the figure 
+st = sprintf("nmax_%d_trials_%d_converge_iterations", ...
+  nodes_to_test(end), trials);
+print_fig(fig, st, params);
+
+% -- finished convergence plot -- %
+
 % -- plot convergence statistics -- %
 
+wlegs = ["min", "max", "mean", "window"];
+msg = "Converge statistics";
+% create the figure
+fig = figure;
+
+% enable hold and boxing
+hold on; box on;
+
+  % min cov
+  cur = cov_min_global;
+  err_std = std(cur, 0, 2)' / sqrt(trials);
+  errorbar(node_len_array, mean(cur, 2)', err_std, "LineWidth", 2);
+
+  % max cov
+  cur = cov_max_global;
+  err_std = std(cur, 0, 2)' / sqrt(trials);
+  errorbar(node_len_array, mean(cur, 2)', err_std, "LineWidth", 2);
+
+  % mean
+  cur = cov_mean_global;
+  err_std = std(cur, 0, 2)' / sqrt(trials);
+  errorbar(node_len_array, mean(cur, 2)', err_std, "LineWidth", 2);
+
+  % window cov
+  cur = cov_win_global;
+  err_std = std(cur, 0, 2)' / sqrt(trials);
+  errorbar(node_len_array, mean(cur, 2)', err_std, "LineWidth", 2);
+
+hold off;
+
+% handle figure presentation
+ylabel("Iterations", "FontName", "Times New Roman");
+xlabel("Nodes", "Interpreter", "Latex", "FontName", "Times New Roman");
+st = sprintf(msg);
+title(st, "Interpreter", "Latex", "FontName", "Times New Roman");
+xticks(node_len_array)
+xticklabels(num2cell(nodes_to_test))
+legend(wlegs);
+
+% print the figure 
+st = sprintf("nmax_%d_trials_%d_converge_statistics", ...
+  nodes_to_test(end), trials);
+print_fig(fig, st, params);
 
 % -- finished plotting convergence statistics -- %
 
