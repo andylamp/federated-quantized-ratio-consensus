@@ -37,9 +37,9 @@ nodes_to_test_len = length(nodes_to_test);
 node_len_array = 1:nodes_to_test_len;
 
 % trials for regular testing
-trials = 10;
+trials = 5;
 % trials for large scale testing
-% trials = 5;
+% trials = 50;
 trials_arr = 1:trials;
 
 % epsilon to stop
@@ -60,7 +60,7 @@ total_trial_time = zeros(trials, 1);
 
 % setup variables
 params.type = "quant-normal";   % normal async
-params.pflag = 1;               % enable printing
+params.pflag = 0;               % enable printing
 params = setup_vars(params);    % setup environment variables
 
 for t=trials_arr
@@ -112,7 +112,7 @@ for t=trials_arr
       % changed)
       % 3. number of flips between min, max (not used currently)
       %
-      node_stats = zeros(nodes, 3);
+      node_stats = zeros(nodes, 2);
       node_stats(:, 1) = max_iter;
       
       % start ticking the global one
@@ -203,7 +203,6 @@ for t=trials_arr
       cov_min = min(node_stats(:, 1));        % min converge.
       cov_max = max(node_stats(:, 2));        % max converge.
       cov_mean = mean(node_stats(:, 2));      % mean converge for max
-      % flip_per = sum(node_stats(:, 3))/nodes; % flip percentage.
       
       % update the variables.
       cov_min_global(n, t) = cov_min;
