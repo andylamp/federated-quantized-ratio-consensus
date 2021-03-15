@@ -29,7 +29,7 @@ max_iter = 100;
 % the graph connectivity target
 graph_connectivity = 0.5;
 % the number of nodes
-nodes_to_test = [20, 50, 100, 200, 250, 300, 350, 400, 500, 600]; % , 100, 150, 200, 400, 600
+nodes_to_test = [20, 50, 100, 200, 250, 300, 350, 400, 500, 600, 1000, 2000, 5000, 10000]; % , 100, 150, 200, 400, 600
 % nodes for "large scale" testing
 % nodes_to_test = [20, 200, 500, 1000, 5000, 10000];
 nodes_to_test_len = length(nodes_to_test);
@@ -37,7 +37,7 @@ nodes_to_test_len = length(nodes_to_test);
 node_len_array = 1:nodes_to_test_len;
 
 % trials for regular testing
-trials = 5;
+trials = 10;
 % trials for large scale testing
 % trials = 50;
 trials_arr = 1:trials;
@@ -60,7 +60,7 @@ total_trial_time = zeros(trials, 1);
 
 % setup variables
 params.type = "quant-normal";   % normal async
-params.pflag = 0;               % enable printing
+params.pflag = 1;               % enable printing
 params = setup_vars(params);    % setup environment variables
 
 for t=trials_arr
