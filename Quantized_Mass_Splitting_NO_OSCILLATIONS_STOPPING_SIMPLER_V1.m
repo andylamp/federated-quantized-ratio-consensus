@@ -2,6 +2,8 @@ close all
 clear all
 clc
 
+rng('default');
+
 %largeconstant=10^10                %%% WORK ALSO FOR RING
 connectivity=0.5;                   
 nodes=200;
@@ -229,9 +231,9 @@ z
 figure
 hold
 stairs(ceil(first/quant_step))
-title('Load per Node According to Processing Capacity','FontWeight','Normal')
-ylabel('Node State Variables (q_j^s[k])')
-xlabel('Number of Iterations (k)')
+title('Load per Node According to Processing Capacity', 'FontWeight','Normal')
+ylabel('Node State Variables ($q_j^s[k]$)', 'interpreter', "latex")
+xlabel('Number of Iterations ($k$)', 'interpreter', "latex")
 
 C_average = nodes_states_y
 
@@ -241,9 +243,9 @@ initial_aver
 figure
 hold
 stairs(first2)
-title('Load per Processing Cycle + Max/Min plots (Dashed)','FontWeight','Normal')
-ylabel('Node State Variables (q_j^s[k])')
-xlabel('Number of Iterations (k)')
+title('Load per Processing Cycle + Max/Min plots (Dashed)')
+ylabel('Node State Variables ($q_j^s[k]$)', 'interpreter', "latex", "fontsize", 18)
+xlabel('Number of Iterations ($k$)', 'interpreter', "latex", "fontsize", 18)
 stairs(max_plot, '--')
 stairs(min_plot, '--')
 

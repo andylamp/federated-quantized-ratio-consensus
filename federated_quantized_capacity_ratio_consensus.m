@@ -29,7 +29,7 @@ max_iter = 100;
 % the graph connectivity target
 graph_connectivity = 0.5;
 % the number of nodes
-nodes_to_test = [20, 50, 100, 200, 250, 300, 350, 400, 500, 600, 1000, 2000, 5000, 10000]; % , 100, 150, 200, 400, 600
+nodes_to_test = [20, 50, 100, 200, 400, 600, 1000, 2000, 5000, 10000]; % , 100, 150, 200, 400, 600
 % nodes for "large scale" testing
 % nodes_to_test = [20, 200, 500, 1000, 5000, 10000];
 nodes_to_test_len = length(nodes_to_test);
@@ -37,7 +37,7 @@ nodes_to_test_len = length(nodes_to_test);
 node_len_array = 1:nodes_to_test_len;
 
 % trials for regular testing
-trials = 10;
+trials = 50;
 % trials for large scale testing
 % trials = 50;
 trials_arr = 1:trials;
@@ -183,7 +183,7 @@ for t=trials_arr
         % check if the termination condition is met
         if mod(k, diameter) == 0
           vote_index = max_votes - min_votes <= epsilon;
-          nodes_converged = find(vote_index == 0);
+          nodes_converged = find(vote_index == 1);
           nodes_diverged = find(vote_index ~= 0);
           
           a = 1;  
@@ -202,7 +202,7 @@ for t=trials_arr
       % compute the stats
       cov_min = min(node_stats(:, 1));        % min converge.
       cov_max = max(node_stats(:, 2));        % max converge.
-      cov_mean = mean(node_stats(:, 2));      % mean converge for max
+      cov_mean = mean(node_stats(:, 1));      % mean converge for max
       
       % update the variables.
       cov_min_global(n, t) = cov_min;
