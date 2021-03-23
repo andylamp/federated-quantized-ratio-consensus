@@ -16,3 +16,11 @@ xlabel('Number of Iterations ($k$)', 'interpreter', "latex", "fontsize", 18)
 
 ylabel('Iterations', 'interpreter', "latex", "fontsize", 18)
 xlabel('Nodes', 'interpreter', "latex", "fontsize", 18)
+
+% specific plot configs
+
+% -- converge stats with vertical fix -- %
+set(gcf,'position',[1400, 500, 850, 350])
+
+% -- iterations + time with vertical fix -- %
+set(gcf,'position',[1400, 500, 850, 300])

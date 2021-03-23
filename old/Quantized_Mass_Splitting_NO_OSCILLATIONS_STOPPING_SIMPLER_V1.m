@@ -1,5 +1,5 @@
 close all
-clear all
+clear;
 clc
 
 rng('default');
@@ -33,13 +33,13 @@ end
 
 
 quant_step=1000;   % we can multiply by max of z0
-y0=quant_step*randi(10,nodes,1);
+y0=quant_step*randi(100,nodes,1);
 z0=2*ones(nodes,1);
 for j=1:nodes
     if (mod(j,2)==1)
-        z0(j) = 10;
+        z0(j) = 100;
     else
-        z0(j) = 30;
+        z0(j) = 300;
     end
 end
 y=y0
@@ -232,8 +232,8 @@ figure
 hold
 stairs(ceil(first/quant_step))
 title('Load per Node According to Processing Capacity', 'FontWeight','Normal')
-ylabel('Node State Variables ($q_j^s[k]$)', 'interpreter', "latex")
-xlabel('Number of Iterations ($k$)', 'interpreter', "latex")
+ylabel('Node State Variables ($q_j^s[k]$)', 'interpreter', "latex", "fontsize", 18)
+xlabel('Number of Iterations ($k$)', 'interpreter', "latex", "fontsize", 18)
 
 C_average = nodes_states_y
 
