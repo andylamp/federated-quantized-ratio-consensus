@@ -14,8 +14,11 @@ set(findall(gcf, '-property', 'FontSize'), 'FontSize', 18)
 ylabel('Node State Variables ($q_j^s[k]$)', 'interpreter', "latex", "fontsize", 18)
 xlabel('Number of Iterations ($k$)', 'interpreter', "latex", "fontsize", 18)
 
-ylabel('Iterations', 'interpreter', "latex", "fontsize", 18)
-xlabel('Nodes', 'interpreter', "latex", "fontsize", 18)
+% for y-axis figure 1
+ylabel('Optimal required workload $(w_{j}^{*})$', 'interpreter', "latex", "fontsize", 18)
+
+ylabel('Iterations ($k$)', 'interpreter', "latex", "fontsize", 18)
+xlabel(' Number of Nodes', 'interpreter', "latex", "fontsize", 18)
 
 % specific plot configs
 
