@@ -6,7 +6,7 @@
 % we used 10 trials.
 %
 % For more details, please see either the README.md or our paper which can
-% be found here: https://arxiv.org/abs/xxxx.xxxx
+% be found here: https://arxiv.org/abs/2104.03126
 %
 % Authors:
 %
