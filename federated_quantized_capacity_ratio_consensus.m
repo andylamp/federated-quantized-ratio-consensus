@@ -25,11 +25,11 @@ clear; clc; close all;
 rng("default")
 
 % the maximum iterations to go through
-max_iter = 100;
+max_iter = 1000;
 % the graph connectivity target
 graph_connectivity = 0.5;
 % the number of nodes
-nodes_to_test = [20, 50, 100, 200, 400, 600, 1000, 2000, 5000, 10000]; % , 100, 150, 200, 400, 600
+nodes_to_test = [20, 50, 100, 200, 400, 600, 1000, 2000, 5000]; % , 100, 150, 200, 400, 600
 % nodes for "large scale" testing
 % nodes_to_test = [20, 200, 500, 1000, 5000, 10000];
 nodes_to_test_len = length(nodes_to_test);
@@ -37,7 +37,7 @@ nodes_to_test_len = length(nodes_to_test);
 node_len_array = 1:nodes_to_test_len;
 
 % trials for regular testing
-trials = 50;
+trials = 3;
 % trials for large scale testing
 % trials = 50;
 trials_arr = 1:trials;
@@ -60,7 +60,7 @@ total_trial_time = zeros(trials, 1);
 
 % setup variables
 params.type = "quant-normal";   % normal async
-params.pflag = 1;               % enable printing
+params.pflag = 0;               % enable printing
 params = setup_vars(params);    % setup environment variables
 
 for t=trials_arr
@@ -174,7 +174,7 @@ for t=trials_arr
         % -- end transmission process -- %
         
         % find the min/max votes after values settle
-        for h=node_len_array
+        for h=1:nodes
           [~, cols] = find(adjMatrix(h, :) == 1);
           max_votes(h) = max(max_votes(h), max(max_votes(cols)));
           min_votes(h) = min(min_votes(h), min(min_votes(cols)));
@@ -185,8 +185,7 @@ for t=trials_arr
           vote_index = max_votes - min_votes <= epsilon;
           nodes_converged = find(vote_index == 1);
           nodes_diverged = find(vote_index ~= 0);
-          
-          a = 1;  
+           
           node_stats(nodes_converged, 1) = min(node_stats(nodes_converged, 1), k);
           node_stats(nodes_converged, 2) = max(node_stats(nodes_converged, 2), k);
           %min(node_stats(:, 1))
