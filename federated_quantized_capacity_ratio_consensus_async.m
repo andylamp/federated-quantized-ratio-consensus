@@ -47,7 +47,7 @@ delay_len_array = 1:delay_to_test_len;
 
 % trials 50 regular testing
 trials = 10;
-% trials for large scale testing
+% trials for large scale testing to be performed
 % trials = 50;
 trials_arr = 1:trials;
 
