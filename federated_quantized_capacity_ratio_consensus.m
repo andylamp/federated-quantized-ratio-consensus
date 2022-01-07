@@ -25,19 +25,21 @@ clear; clc; close all;
 rng("default")
 
 % the maximum iterations to go through
-max_iter = 1000;
+max_iter = 2000;
+% attempts to try with different graphs
+max_attempts = 10;
 % the graph connectivity target
-graph_connectivity = 0.5;
+graph_connectivity = 0.6;
 % the number of nodes
-nodes_to_test = [20, 50, 100, 200, 400, 600, 1000, 2000, 5000]; % , 100, 150, 200, 400, 600
+nodes_to_test = [50, 100, 200, 300, 600, 1000, 2000, 5000, 10000]; % , 100, 150, 200, 400, 600
 % nodes for "large scale" testing
 % nodes_to_test = [20, 200, 500, 1000, 5000, 10000];
 nodes_to_test_len = length(nodes_to_test);
 % set the node length as a convenience variable
 node_len_array = 1:nodes_to_test_len;
 
-% trials for regular testing
-trials = 10;
+% trials 50 regular testing
+trials = 5;
 % trials for large scale testing
 % trials = 50;
 trials_arr = 1:trials;
@@ -60,168 +62,128 @@ total_trial_time = zeros(trials, 1);
 
 % setup variables
 params.type = "quant-normal";   % normal async
-params.pflag = 1;               % enable printing
+params.pflag = 0;               % enable printing
 params = setup_vars(params);    % setup environment variables
 
 for t=trials_arr
     fprintf("\n** Running trial %d\n", t);
     trial_tic = tic;
     for n=node_len_array
-      nodes = nodes_to_test(n);
-      fprintf(" -- Running for node size: %d\n", nodes);
-      
-      % generate the capacity for z0
-      z0 = gen_workload(nodes);
-      % now generate the capacity for y0
-      y0_opt.multiplier = quantisation_step;
-      y0_opt.distribution_type = "randomised";
-      y0 = gen_workload(nodes, y0_opt);
-      sum_y0 = sum(y0);
-      sum_z0 = sum(z0);
-      
-      % set the initialisation values
-      z = z0;
-      y = y0;
-      init_avg = sum_y0 / sum_z0;
-      
-      % sanity check to ensure that the invariant holds
-      assert(sum(y0) > sum(z0));
-      
-      fprintf("\t== DEBUG INFO: \n\t Initial Average: %d,\n\t Sum(y0): %d,\n\t Sum(z0): %d.\n", ...
-        init_avg, sum_y0, sum_z0);
-      
-      % firstly, lets generate the graph
-      [~, diameter, nodes, adjMatrix] = gen_graph(nodes);
-      
-      % the node states
-      z_states = z;
-      y_states = y;    
+      completed = 0;
+      attempt = 1;
+      while completed == 0
+        nodes = nodes_to_test(n);
+        fprintf(" -- Running for node size: %d (attempt %d)\n", ...
+          nodes, attempt);
+        
+        % generate the capacity for z0
+        z0 = gen_workload(nodes);
+        % now generate the capacity for y0
+        y0_opt.multiplier = quantisation_step;
+        y0_opt.distribution_type = "randomised";
+        y0 = gen_workload(nodes, y0_opt);
+        sum_y0 = sum(y0);
+        sum_z0 = sum(z0);
+        
+        % set the initialisation values
+        z = z0;
+        y = y0;
+        init_avg = sum_y0 / sum_z0;
+        
+        % sanity check to ensure that the invariant holds
+        assert(sum(y0) > sum(z0));
+        
+        fprintf("\t== DEBUG INFO: \n\t Initial Average: %d,\n\t Sum(y0): %d,\n\t Sum(z0): %d.\n", ...
+          init_avg, sum_y0, sum_z0);
+        
+        % firstly, lets generate the graph
+        [~, diameter, nodes, adjMatrix] = gen_graph(nodes);
+        
+        % the node states
+        z_states = z;
+        y_states = y;    
+  
+        % plot variables
+        max_plot = NaN(max_iter, 1);
+        min_plot = NaN(max_iter, 1);
+        
+        node_stats(:, 1) = max_iter;
+        
+        % start ticking the global one
+        global_tic = tic;
 
-      % plot variables
-      max_plot = NaN(max_iter, 1);
-      min_plot = NaN(max_iter, 1);
-      
-      % node converge statistics, the structure is as follows:
-      %
-      % row count: nodes
-      %
-      % description of each column:
-      %
-      % 1. min iteration that satisfied the constraint
-      % 2. max iteration that satisfied the constraint (and then not
-      % changed)
-      % 3. number of flips between min, max (not used currently)
-      %
-      node_stats = zeros(nodes, 2);
-      node_stats(:, 1) = max_iter;
-      
-      % start ticking the global one
-      global_tic = tic;
-      
-      % now run for all the iterations
-      for k=1:max_iter
+        % assign parameters
+        con_params.z = z;
+        con_params.y = y;
+        con_params.can_stop = 0;
+        con_params.epsilon = epsilon;
+        con_params.diameter = diameter;
+        con_params.adj_matrix = adjMatrix;
         
-        % transmission buffers for the nodes
-        transm_z = zeros(nodes, nodes);
-        transm_y = zeros(nodes, nodes);
+
+        % node converge statistics, the structure is as follows:
+        %
+        % row count: nodes
+        %
+        % description of each column:
+        %
+        % 1. min iteration that satisfied the constraint
+        % 2. max iteration that satisfied the constraint (and then not
+        % changed)
+        % 3. number of flips between min, max (not used currently)
+        %
+        con_params.node_stats = zeros(nodes, 2);
+        con_params.node_stats(:, 1) = max_iter;
         
-        % get the indices that are greater than zero
-        z_idcs = find(z > 0);
-        % now get the ceil for the y-states based on the predicate above
-        y_states(z_idcs) = ceil(y(z_idcs)./z(z_idcs));
-        
-        % get current y states of the nodes
-        y_states = y_states .* z0;
-        
-        % check if the diameter is right for us to check
-        if mod(k, diameter) == 1
-          vote_states = y ./ z;
-          max_votes = ceil(vote_states);
-          min_votes = floor(vote_states); 
+        % now run for all the iterations
+        k = 1;
+        while con_params.can_stop == 0 && k < max_iter
+          % perform the consensus iteration
+          [con_params] = consensus_iter(k, con_params);
+          % increment the counter
+          k = k + 1;
         end
         
-        % get the nodes that need to be adjusted
-        n_idcs = find(z > 1);
+        % compute the stats
+        cov_min = min(con_params.node_stats(:, 1));        % min converge.
+        cov_max = max(con_params.node_stats(:, 2));        % max converge.
+        cov_mean = mean(con_params.node_stats(:, 1));      % mean converge for max
         
+        % update the variables.
+        cov_min_global(n, t) = cov_min;
+        cov_max_global(n, t) = cov_max;
+        cov_mean_global(n, t) = cov_mean;
+        cov_win_global(n, t) = cov_max - cov_min; 
+
+        % assert(cov_win_global(n, t) >= 0)      
+
+        % record the time it took to converge
+        total_time_global(n, t) = toc(global_tic);
         
-        % -- transmission process -- %
-        
-        % outgoing transmission
-        for idc=1:length(n_idcs)
-          out_edge = n_idcs(idc);
-          while z(out_edge) > 1
-            % get a random node out of the available pool
-            node = randi(nodes);
-            
-            % now adjust the transmitted weights
-            if adjMatrix(node, out_edge) > 0
-              flr = floor(y(out_edge) / z(out_edge));
-              transm_y(node, out_edge) = transm_y(node, out_edge) + flr;
-              transm_z(node, out_edge) = transm_z(node, out_edge) + 1;
-              
-              y(out_edge) = y(out_edge) - flr;
-              z(out_edge) = z(out_edge) - 1;
-            end
-            
-          end
-          
+        fprintf("\t== DEBUG INFO: \n\t Converged at iteration:  %d (ouf ot max: %d),\n\t Initial avg:  %d, \n\t Final avg:    %d,\n\t Time elapsed: %d seconds.\n", ...
+          k, max_iter, init_avg, sum_y0/sum_z0, total_time_global(n, t));
+        if k >= max_iter
+          fprintf("\t^^ ERROR: Exhausted max iterations (max=%d) for converging -- stopping\n", k);
+        else
+          fprintf("\t^^ INFO: Converged after %d out of %d iterations for %d nodes\n", k, max_iter, nodes);
         end
-        
-        % sum with the incoming transmitted values
-        y = y + sum(transm_y, 2);
-        z = z + sum(transm_z, 2);
-        
-        % -- end transmission process -- %
-        
-        % find the min/max votes after values settle
-        for h=1:nodes
-          [~, cols] = find(adjMatrix(h, :) == 1);
-          max_votes(h) = max(max_votes(h), max(max_votes(cols)));
-          min_votes(h) = min(min_votes(h), min(min_votes(cols)));
+
+        % check what happened
+        if cov_win_global(n, t) < 0 && attempt < max_attempts
+          attempt = attempt + 1;
+        elseif attempt >= max_attempts
+          error("Failed to converge and max attempts (%d) exhausted", ...
+            max_attempts)
+        else
+          % notify we completed
+          completed = 1;
         end
-        
-        % check if the termination condition is met
-        if mod(k, diameter) == 0
-          vote_index = max_votes - min_votes <= epsilon;
-          nodes_converged = find(vote_index == 1);
-          nodes_diverged = find(vote_index ~= 0);
-           
-          node_stats(nodes_converged, 1) = min(node_stats(nodes_converged, 1), k);
-          node_stats(nodes_converged, 2) = max(node_stats(nodes_converged, 2), k);
-          %min(node_stats(:, 1))
-          
-          % check if we can terminate, which is when all votes are raised
-          if vote_index
-            break;
-          end
-        end
-        
+
+        % while end
       end
       
-      % compute the stats
-      cov_min = min(node_stats(:, 1));        % min converge.
-      cov_max = max(node_stats(:, 2));        % max converge.
-      cov_mean = mean(node_stats(:, 1));      % mean converge for max
-      
-      % update the variables.
-      cov_min_global(n, t) = cov_min;
-      cov_max_global(n, t) = cov_max;
-      cov_mean_global(n, t) = cov_mean;
-      cov_win_global(n, t) = cov_max - cov_min; 
-      assert(cov_win_global(n, t) >= 0)      
-      
-      % record the time it took to converge
-      total_time_global(n, t) = toc(global_tic);
-      
-      fprintf("\t== DEBUG INFO: \n\t Converged at iteration:  %d (ouf ot max: %d),\n\t Initial avg:  %d, \n\t Final avg:    %d,\n\t Time elapsed: %d seconds.\n", ...
-        k, max_iter, init_avg, sum_y0/sum_z0, total_time_global(n, t));
-      if k >= max_iter
-        fprintf("\t^^ ERROR: Exhausted max iterations (max=%d) for converging -- stopping\n", k);
-      else
-        fprintf("\t^^ INFO: Converged after %d out of %d iterations for %d nodes\n", k, max_iter, nodes);
-      end
-      
-      fprintf(" -- Finished for node size: %d\n", nodes);
+      fprintf(" -- Finished for node size: %d (attempts: %d)\n", ...
+        nodes, attempt);
     end
     trial_toc = toc(trial_tic);
     fprintf("** Finished trial %d, elapsed time: %d seconds\n", t, trial_toc);
