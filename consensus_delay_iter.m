@@ -1,5 +1,5 @@
 function [params] = consensus_delay_iter(k, params)
-%% Regular consensus iteration
+%% Delay tolerant consensus iteration
 %
   nodes = size(params.adj_matrix, 1);
   % transmission buffers for the nodes
