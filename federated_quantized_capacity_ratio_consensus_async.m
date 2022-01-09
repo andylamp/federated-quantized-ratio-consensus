@@ -31,7 +31,7 @@ max_attempts = 10;
 % the graph connectivity target
 graph_connectivity = 0.6;
 % the number of nodes
-nodes_to_test = [50, 100, 200, 300, 600, 1000]; % , 100, 150, 200, 400, 600, , 2000, 5000, 10000
+nodes_to_test = [50, 100, 200, 300, 600, 1000, 2000, 3000]; % , 100, 150, 200, 400, 600, , 2000, 5000, 10000
 % nodes for "large scale" testing
 % nodes_to_test = [20, 200, 500, 1000, 5000, 10000];
 nodes_to_test_len = length(nodes_to_test);
@@ -39,14 +39,14 @@ nodes_to_test_len = length(nodes_to_test);
 node_len_array = 1:nodes_to_test_len;
 
 % the number of delay to test
-delay_to_test = [5, 10, 20];
+delay_to_test = [5, 10, 15, 20, 25, 30];
 % the delay array length
 delay_to_test_len = length(delay_to_test);
 % set the delay length as a convenience variable
 delay_len_array = 1:delay_to_test_len;
 
 % trials 50 regular testing
-trials = 10;
+trials = 50;
 % trials for large scale testing to be performed
 % trials = 50;
 trials_arr = 1:trials;
@@ -80,6 +80,7 @@ for t=trials_arr
     for d=delay_len_array
       % get the current delay
       max_delay = delay_to_test(d);
+      fprintf("\n^^ Running for delay %d, for trial %d\n", max_delay, t);
       
       % run for the specified network sizes
       for n=node_len_array
@@ -87,7 +88,7 @@ for t=trials_arr
         attempt = 1;
         while completed == 0
           nodes = nodes_to_test(n);
-          fprintf(" -- Running for node size: %d (attempt %d)\n", ...
+          fprintf(" -- Running for node size: %d (attempt: %d)\n", ...
             nodes, attempt);
           
           % generate the capacity for z0
@@ -196,8 +197,8 @@ for t=trials_arr
           % while end
         end
         
-        fprintf(" -- Finished for node size: %d (attempts: %d)\n", ...
-          nodes, attempt);
+        fprintf(" -- Finished for node size: %d (attempts: %d, delay: %d, trial: %d)\n", ...
+          nodes, attempt, max_delay, t);
       end
       % ended delay
     end

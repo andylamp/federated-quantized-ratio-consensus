@@ -7,6 +7,9 @@
 # the intellij directory
 .idea/
 
+# old stuff
+old/
+
 # Compiled MEX binaries (all platforms)
 *.mex*
 
