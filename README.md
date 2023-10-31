@@ -22,8 +22,6 @@ proposed algorithm. Finally, by using extensive empirical evaluations
 through simulations we show that the proposed algorithm exhibits
 state-of-the-art performance. 
 
-# Introduction
-
 <!-- capacity consensus example run -->
 <p align="center"">
   <img src="./assets/small-example-weights-with-split-and-sub.png" alt="network" width="600"/>
@@ -40,7 +38,6 @@ state-of-the-art performance.
 <p align="center"">
   <img src="./assets/iterations-to-converge-n-10k-prepared.png" alt="network" width="600"/>
 </p>
-a
 
 <p align="center"">
   <img src="./assets/time-to-converge-n-10k-prepared-vertical-fix.png" alt="network" width="600"/>
